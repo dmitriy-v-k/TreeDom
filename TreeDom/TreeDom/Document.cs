@@ -13,17 +13,12 @@ namespace TreeDom
         }
         public string AsString()
         {
-            return string.Concat(_domParts);
+            return string.Join(string.Empty, Parts().Select(p => p.AsString()));
         }
 
-        public IDocument WithDocumentPart(IDomPart domPart)
+        public IEnumerable<IDomPart> Parts()
         {
-            return WithDocumentParts(new[] { domPart });
-        }
-
-        public IDocument WithDocumentParts(IEnumerable<IDomPart> domParts)
-        {
-            return new Document(_domParts.Concat(domParts));
+            return _domParts.ToList();
         }
     }
 }

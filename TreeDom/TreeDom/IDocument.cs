@@ -2,9 +2,7 @@
 
 namespace TreeDom
 {
-    public interface IDocument: IDomPart
+    public interface IDocument: IComposite
     {
-        IDocument WithDocumentParts(IEnumerable<IDomPart> domParts);
-        IDocument WithDocumentPart(IDomPart domPart);
     }
 }
