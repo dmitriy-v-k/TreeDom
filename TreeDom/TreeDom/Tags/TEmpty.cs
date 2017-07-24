@@ -6,28 +6,21 @@ using System.Threading.Tasks;
 
 namespace TreeDom.Tags
 {
-    public sealed class TOpen : ITag
+    public sealed class TEmpty : ITag
     {
-        private readonly ITag _origin;
-
-        public TOpen(ITag origin)
-        {
-            _origin = origin;
-        }
-
         public string AsString()
         {
-            return _origin.AsString();
+            return string.Empty;
         }
 
         public IEnumerable<IDomPart> Parts()
         {
-            return _origin.Parts();
+            return Enumerable.Empty<IDomPart>();
         }
 
         public ITag Unwrap()
         {
-            return _origin;
+            return this;
         }
     }
 }

@@ -7,10 +7,15 @@ using TreeDom.Tags.Attributes;
 
 namespace TreeDom.Tags
 {
-    public sealed class TWithAttributes: ITag
+    public sealed class TWithAttributes: IWithAttributes
     {
         private readonly ITag _origin;
         private readonly IEnumerable<ITAttribute> _attributes;
+
+        public TWithAttributes(ITag origin)
+            : this(origin, Enumerable.Empty<ITAttribute>())
+        {
+        }
 
         public TWithAttributes(ITag origin, IEnumerable<ITAttribute> attributes)
         {
@@ -20,12 +25,12 @@ namespace TreeDom.Tags
 
         public string AsString()
         {
-            return string.Join(string.Empty, Parts());
+            return new Tag(Parts()).AsString();
         }
 
         public IEnumerable<IDomPart> Parts()
         {
-            var parts = Unwrap().Parts().ToList();
+            var parts = _origin.Parts().ToList();
             parts.AddRange(_attributes);
             return parts;
         }
@@ -33,6 +38,31 @@ namespace TreeDom.Tags
         public ITag Unwrap()
         {
             return _origin.Unwrap();
+        }
+
+        public ITag Attr(ITAttribute attribute)
+        {
+            var attrs = _attributes.ToList();
+            attrs.Add(attribute);
+            return new TWithAttributes(_origin, attrs);
+        }
+
+        public ITAttribute Attr(string name)
+        {
+            var attrs = _attributes.Where(a => name.Equals(a.Name()));
+            return attrs.Count() > 0 ? attrs.Last() : new AEmpty(name);
+        }
+
+        public IEnumerable<ITAttribute> Attrs()
+        {
+            return _attributes;
+        }
+
+        public ITag Attrs(IEnumerable<ITAttribute> attributes)
+        {
+            var attrs = _attributes.ToList();
+            attrs.AddRange(attributes);
+            return new TWithAttributes(_origin, attrs);
         }
     }
 }

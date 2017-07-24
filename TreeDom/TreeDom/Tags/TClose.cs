@@ -16,19 +16,19 @@ namespace TreeDom.Tags
         }
         public string AsString()
         {
-            var parts = Parts().ToList();
-            parts.Insert(0, new Raw("/"));
-            return new Tag(parts).AsString();
+            return new Tag(Parts()).AsString();
         }
 
         public IEnumerable<IDomPart> Parts()
         {
-            return _origin.Parts();
+            var parts = _origin.Parts().Take(1).ToList();
+            parts.Insert(0, new Raw("/"));
+            return parts;
         }
 
         public ITag Unwrap()
         {
-            return _origin.Unwrap();
+            return _origin;
         }
     }
 }

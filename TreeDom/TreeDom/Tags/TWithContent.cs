@@ -6,10 +6,15 @@ using System.Threading.Tasks;
 
 namespace TreeDom.Tags
 {
-    public sealed class TWithContent : ITag
+    public sealed class TWithContent : IWithContent
     {
         private readonly ITag _origin;
         private readonly IDomPart _content;
+
+        public TWithContent(ITag origin)
+            : this(origin, new Raw(string.Empty))
+        {
+        }
 
         public TWithContent(ITag origin, IDomPart content)
         {
@@ -31,6 +36,16 @@ namespace TreeDom.Tags
         public ITag Unwrap()
         {
             return _origin.Unwrap();
+        }
+
+        public ITag Content(IDomPart content)
+        {
+            return new TWithContent(_origin, content);
+        }
+
+        public IDomPart Content()
+        {
+            return _content;
         }
     }
 }

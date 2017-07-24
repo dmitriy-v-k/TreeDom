@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TreeDom.Tags.Attributes
+namespace TreeDom.Tags
 {
-    public interface ITAttribute : IDomPart
+    public interface IWithContent: ITag
     {
-        string Name();
+        ITag Content(IDomPart content);
+        IDomPart Content();
     }
 }
