@@ -17,6 +17,11 @@ namespace TreeDom.Tags
         {
         }
 
+        public TWithAttributes(ITag origin, ITAttribute attribute)
+            :this(origin, new[] { attribute })
+        {
+        }
+
         public TWithAttributes(ITag origin, IEnumerable<ITAttribute> attributes)
         {
             _origin = origin;
