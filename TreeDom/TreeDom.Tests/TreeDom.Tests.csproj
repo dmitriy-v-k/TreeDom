@@ -41,6 +41,7 @@
     <Compile Include="DocumentTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RawTests.cs" />
+    <Compile Include="SummaryTests.cs" />
     <Compile Include="Tag\TagTests.cs" />
     <Compile Include="Tag\TCloseTests.cs" />
   </ItemGroup>

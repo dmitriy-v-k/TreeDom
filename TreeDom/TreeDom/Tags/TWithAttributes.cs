@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TreeDom.Tags.Attributes;
 
-namespace TreeDom.Tag
+namespace TreeDom.Tags
 {
     public sealed class TWithAttributes: ITag
     {
@@ -19,7 +20,7 @@ namespace TreeDom.Tag
 
         public string AsString()
         {
-            return "";
+            return string.Join(string.Empty, Parts());
         }
 
         public IEnumerable<IDomPart> Parts()

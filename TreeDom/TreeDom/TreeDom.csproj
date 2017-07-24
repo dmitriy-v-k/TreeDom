@@ -46,16 +46,18 @@
     <Compile Include="IDocument.cs" />
     <Compile Include="IDomPart.cs" />
     <Compile Include="IWrap.cs" />
-    <Compile Include="Tag\ITag.cs" />
-    <Compile Include="Tag\ITAttribute.cs" />
+    <Compile Include="Tags\Attributes\Attribute.cs" />
+    <Compile Include="Tags\Attributes\AWithValue.cs" />
+    <Compile Include="Tags\ITag.cs" />
+    <Compile Include="Tags\Attributes\ITAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Raw.cs" />
-    <Compile Include="Tag\Tag.cs" />
-    <Compile Include="Tag\TClose.cs" />
-    <Compile Include="Tag\TOpen.cs" />
-    <Compile Include="Tag\TSingle.cs" />
-    <Compile Include="Tag\TWithAttributes.cs" />
-    <Compile Include="Tag\TWithContent.cs" />
+    <Compile Include="Tags\Tag.cs" />
+    <Compile Include="Tags\TClose.cs" />
+    <Compile Include="Tags\TOpen.cs" />
+    <Compile Include="Tags\TSingle.cs" />
+    <Compile Include="Tags\TWithAttributes.cs" />
+    <Compile Include="Tags\TWithContent.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

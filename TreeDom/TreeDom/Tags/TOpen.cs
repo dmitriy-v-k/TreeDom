@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TreeDom.Tag
+namespace TreeDom.Tags
 {
     public sealed class TOpen : ITag
     {
@@ -17,7 +17,7 @@ namespace TreeDom.Tag
 
         public string AsString()
         {
-            return _origin.ToString();
+            return _origin.AsString();
         }
 
         public IEnumerable<IDomPart> Parts()

@@ -4,20 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TreeDom.Tag
+namespace TreeDom.Tags
 {
-    public sealed class TClose : ITag
+    public sealed class TSingle: ITag
     {
         private readonly ITag _origin;
 
-        public TClose(ITag origin)
+        public TSingle(ITag origin)
         {
             _origin = origin;
         }
         public string AsString()
         {
             var parts = Parts().ToList();
-            parts.Insert(0, new Raw("/"));
+            parts.Add(new Raw(" /"));
             return new Tag(parts).AsString();
         }
 

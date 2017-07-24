@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace TreeDom
 {
-    public sealed class Document : IDocument
+    public sealed class Document : IComposite
     {
         private readonly IEnumerable<IDomPart> _domParts;
         public Document(IEnumerable<IDomPart> domParts)

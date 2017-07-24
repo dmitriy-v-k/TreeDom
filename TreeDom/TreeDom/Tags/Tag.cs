@@ -2,11 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace TreeDom.Tag
+namespace TreeDom.Tags
 {
     public sealed class Tag : ITag
     {
         private readonly IEnumerable<IDomPart> _tagParts;
+        private readonly string _name;
+
+        public Tag(string name)
+            : this(new[] { new Raw(name) })
+        {
+        }
 
         public Tag(IEnumerable<IDomPart> tagParts)
         {

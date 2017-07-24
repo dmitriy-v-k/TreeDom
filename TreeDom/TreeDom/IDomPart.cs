@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace TreeDom
+﻿namespace TreeDom
 {
     public interface IDomPart
     {

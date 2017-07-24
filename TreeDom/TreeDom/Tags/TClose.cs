@@ -4,30 +4,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TreeDom.Tag
+namespace TreeDom.Tags
 {
-    public sealed class TWithContent : ITag
+    public sealed class TClose : ITag
     {
         private readonly ITag _origin;
-        private readonly IDomPart _content;
 
-        public TWithContent(ITag origin, IDomPart content)
+        public TClose(ITag origin)
         {
             _origin = origin;
-            _content = content;
         }
         public string AsString()
         {
-            return string.Join(string.Empty, Parts().Select(p => p.AsString()));
+            var parts = Parts().ToList();
+            parts.Insert(0, new Raw("/"));
+            return new Tag(parts).AsString();
         }
 
         public IEnumerable<IDomPart> Parts()
         {
-            return new[] {
-                new TOpen(_origin),
-                _content,
-                new TClose(_origin)
-            };
+            return _origin.Parts();
         }
 
         public ITag Unwrap()

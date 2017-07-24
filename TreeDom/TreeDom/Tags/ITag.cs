@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TreeDom.Tag
+namespace TreeDom.Tags
 {
-    public interface ITAttribute : IDomPart
+    public interface ITag : IComposite, IWrap<ITag>
     {
     }
 }

@@ -1,12 +1,12 @@
 ﻿using NUnit.Framework;
-using TreeDom.Tag;
+using TreeDom.Tags;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TreeDom.Tag.Tests
+namespace TreeDom.Tags.Tests
 {
     [TestFixture()]
     public class TagTests
