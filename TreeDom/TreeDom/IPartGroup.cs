@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace TreeDom
 {
-    public interface IWrap<T>
+    public interface IPartGroup: IComposite
     {
-        T Unwrap();
+        IPartGroup Add(IDomPart part);
     }
 }

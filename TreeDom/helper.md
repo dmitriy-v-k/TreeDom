@@ -1,0 +1,1 @@
+- [Roslynator](https://github.com/JosefPihrt/Roslynator)

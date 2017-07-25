@@ -14,6 +14,7 @@ namespace TreeDom.Tags
         {
             _origin = origin;
         }
+
         public string AsString()
         {
             return new Tag(Parts()).AsString();

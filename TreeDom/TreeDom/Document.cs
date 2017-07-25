@@ -11,13 +11,15 @@ namespace TreeDom
             : this(new[]{ domPart })
         {
         }
+
         public Document(IEnumerable<IDomPart> domParts)
         {
             _domParts = domParts;
         }
+
         public string AsString()
         {
-            return string.Join(string.Empty, Parts().Select(p => p.AsString()));
+            return string.Concat(Parts().Select(p => p.AsString()));
         }
 
         public IDocument AddPart(IDomPart part)

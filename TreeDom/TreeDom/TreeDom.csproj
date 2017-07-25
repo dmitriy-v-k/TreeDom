@@ -20,7 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>..\..\..\..\..\Documents\Visual Studio 2015\roslinRuleSet.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -42,9 +42,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Document.cs" />
+    <Compile Include="Extensions\IEnumerableExtension.cs" />
     <Compile Include="IComposite.cs" />
     <Compile Include="IDocument.cs" />
     <Compile Include="IDomPart.cs" />
+    <Compile Include="IPartGroup.cs" />
     <Compile Include="IWrap.cs" />
     <Compile Include="Tags\Attributes\AEmpty.cs" />
     <Compile Include="Tags\Attributes\TAttribute.cs" />

@@ -21,9 +21,10 @@ namespace TreeDom.Tags
             _origin = origin;
             _content = content;
         }
+
         public string AsString()
         {
-            return string.Format("{0}{1}{2}", 
+            return string.Format("{0}{1}{2}",
                 new TOpen(_origin).AsString(), _content.AsString(), new TClose(_origin).AsString()
             );
         }

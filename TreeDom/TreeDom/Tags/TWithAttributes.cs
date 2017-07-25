@@ -55,7 +55,7 @@ namespace TreeDom.Tags
         public ITAttribute Attr(string name)
         {
             var attrs = _attributes.Where(a => name.Equals(a.Name()));
-            return attrs.Count() > 0 ? attrs.Last() : new AEmpty(name);
+            return attrs.Any() ? attrs.Last() : new AEmpty(name);
         }
 
         public IEnumerable<ITAttribute> Attrs()

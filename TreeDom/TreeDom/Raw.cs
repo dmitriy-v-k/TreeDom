@@ -13,6 +13,7 @@ namespace TreeDom
         {
             _source = source;
         }
+
         public string AsString()
         {
             return _source;

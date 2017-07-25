@@ -27,14 +27,14 @@ namespace TreeDom.Tests
                                 new [] {
                                     new TAWithValue(
                                         new TAttribute("lang"),
-                                        "ru_RU"    
+                                        "ru_RU"
                                     )
                                 }
                             ),
                             new Raw("test")
-                        )    
+                        )
                     )
-                }    
+                }
             );
         }
 
