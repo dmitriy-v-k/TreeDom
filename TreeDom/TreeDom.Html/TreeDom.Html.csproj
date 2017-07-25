@@ -4,13 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6A812BF2-E45C-420F-9985-2DE886649209}</ProjectGuid>
+    <ProjectGuid>{723C10E7-88D0-4356-B165-37638F49859D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TreeDom</RootNamespace>
-    <AssemblyName>TreeDom</AssemblyName>
+    <RootNamespace>TreeDom.Html</RootNamespace>
+    <AssemblyName>TreeDom.Html</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -20,7 +21,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodeAnalysisRuleSet>..\..\..\..\..\Documents\Visual Studio 2015\roslinRuleSet.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -41,32 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Document.cs" />
-    <Compile Include="Extensions\BooleanExtension.cs" />
-    <Compile Include="Extensions\IEnumerableExtension.cs" />
-    <Compile Include="Extensions\StringExtension.cs" />
-    <Compile Include="IComposite.cs" />
-    <Compile Include="IDocument.cs" />
-    <Compile Include="IDomPart.cs" />
-    <Compile Include="IPartGroup.cs" />
-    <Compile Include="IWrap.cs" />
-    <Compile Include="Tags\Attributes\TAEmpty.cs" />
-    <Compile Include="Tags\Attributes\TAttribute.cs" />
-    <Compile Include="Tags\Attributes\TAWithValue.cs" />
-    <Compile Include="Tags\ITag.cs" />
-    <Compile Include="Tags\Attributes\ITAttribute.cs" />
+    <Compile Include="DocHtml5.cs" />
+    <Compile Include="Doctypes\DTHtml5.cs" />
+    <Compile Include="IHtmlDocument.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Raw.cs" />
-    <Compile Include="Tags\IWithAttributes.cs" />
-    <Compile Include="Tags\IWithContent.cs" />
-    <Compile Include="Tags\Tag.cs" />
-    <Compile Include="PartsGroup.cs" />
-    <Compile Include="Tags\TClose.cs" />
-    <Compile Include="Tags\TEmpty.cs" />
-    <Compile Include="Tags\TOpen.cs" />
-    <Compile Include="Tags\TSingle.cs" />
-    <Compile Include="Tags\TWithAttributes.cs" />
-    <Compile Include="Tags\TWithContent.cs" />
+    <Compile Include="Doctypes\TDoctype.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TreeDom\TreeDom.csproj">
+      <Project>{6a812bf2-e45c-420f-9985-2de886649209}</Project>
+      <Name>TreeDom</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

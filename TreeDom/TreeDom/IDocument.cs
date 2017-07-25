@@ -4,6 +4,6 @@ namespace TreeDom
 {
     public interface IDocument: IComposite
     {
-        IDocument AddPart(IDomPart part);
+        IDocument WithPart(IDomPart part);
     }
 }

@@ -22,7 +22,7 @@ namespace TreeDom
             return string.Concat(Parts().Select(p => p.AsString()));
         }
 
-        public IDocument AddPart(IDomPart part)
+        public IDocument WithPart(IDomPart part)
         {
             var parts = _domParts.ToList();
             parts.Add(part);

@@ -24,6 +24,11 @@ namespace TreeDom
             _parts = parts;
         }
 
+        public PartsGroup(params IDomPart[] parts)
+        {
+            _parts = parts;
+        }
+
         public IPartGroup Add(IDomPart part)
         {
             return new PartsGroup(_parts.Add(part));
