@@ -42,13 +42,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Document.cs" />
+    <Compile Include="Extensions\BooleanExtension.cs" />
     <Compile Include="Extensions\IEnumerableExtension.cs" />
     <Compile Include="IComposite.cs" />
     <Compile Include="IDocument.cs" />
     <Compile Include="IDomPart.cs" />
     <Compile Include="IPartGroup.cs" />
     <Compile Include="IWrap.cs" />
-    <Compile Include="Tags\Attributes\AEmpty.cs" />
+    <Compile Include="Tags\Attributes\TAEmpty.cs" />
     <Compile Include="Tags\Attributes\TAttribute.cs" />
     <Compile Include="Tags\Attributes\TAWithValue.cs" />
     <Compile Include="Tags\ITag.cs" />

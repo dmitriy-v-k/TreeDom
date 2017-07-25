@@ -13,9 +13,11 @@ namespace TreeDom.Tests
     public class SummaryTests
     {
         private IDomPart _doc;
+
         [SetUp]
         public void Setup()
         {
+            const bool req = true;
             _doc = new Document(
                 new List<IDomPart> {
                     new Tag("!DOCTYPE html"),
@@ -24,12 +26,14 @@ namespace TreeDom.Tests
                         new TWithContent(
                             new TWithAttributes(
                                 new Tag("head"),
-                                new [] {
-                                    new TAWithValue(
-                                        new TAttribute("lang"),
-                                        "ru_RU"
-                                    )
-                                }
+                                new TAWithValue(
+                                    new TAttribute("lang"),
+                                    "ru_RU"
+                                )
+                            ).Attr(
+                                req
+                                    ? new TAttribute("required") as ITAttribute
+                                    : new TAEmpty() as ITAttribute
                             ),
                             new Raw("test")
                         )
@@ -41,7 +45,7 @@ namespace TreeDom.Tests
         [Test()]
         public void AsStringTest()
         {
-            StringAssert.AreEqualIgnoringCase("<!DOCTYPE html><html><head lang=\"ru_RU\" >test</head></html>", _doc.AsString());
+            StringAssert.AreEqualIgnoringCase("<!DOCTYPE html><html><head lang=\"ru_RU\"  required>test</head></html>", _doc.AsString());
         }
     }
 }

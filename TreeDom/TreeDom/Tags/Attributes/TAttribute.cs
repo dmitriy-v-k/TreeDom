@@ -14,6 +14,7 @@ namespace TreeDom.Tags.Attributes
         {
             _name = name;
         }
+
         public string AsString()
         {
             return string.Format(" {0}", _name);

@@ -6,13 +6,19 @@ using System.Threading.Tasks;
 
 namespace TreeDom.Tags.Attributes
 {
-    public sealed class AEmpty : ITAttribute
+    public sealed class TAEmpty : ITAttribute
     {
         private readonly string _name;
-        public AEmpty(string name)
+        public TAEmpty()
+            : this(string.Empty)
+        {
+        }
+
+        public TAEmpty(string name)
         {
             _name = name;
         }
+
         public string AsString()
         {
             return string.Empty;
