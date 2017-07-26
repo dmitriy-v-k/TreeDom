@@ -21,6 +21,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>..\..\..\..\..\Documents\Visual Studio 2015\roslinRuleSet.ruleset</CodeAnalysisRuleSet>
+    <WarningsAsErrors>1591</WarningsAsErrors>
+    <DocumentationFile>bin\Debug\TreeDom.XML</DocumentationFile>
+    <LangVersion>6</LangVersion>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>

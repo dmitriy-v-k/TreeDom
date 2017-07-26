@@ -34,6 +34,14 @@ namespace TreeDom.Tags
             return _origin.Parts();
         }
 
+        /// <summary>
+        /// Take a tag is used as a sourse for a start tag 
+        /// </summary>
+        /// <returns>A sourse for a start tag as ITag</returns>
+        /// <remarks>
+        ///     Is Available from version 0.1.0.0
+        ///     Is Available from commit 798156319b6748f173d056dc1892545647514500
+        /// </remarks>
         public ITag Unwrap()
         {
             return _origin.Unwrap();
