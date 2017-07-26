@@ -9,6 +9,7 @@ namespace TreeDom.Extensions
             if (value) act();
             return value;
         }
+
         public static bool IfFalse(this bool value, Action act)
         {
             if (!value) act();

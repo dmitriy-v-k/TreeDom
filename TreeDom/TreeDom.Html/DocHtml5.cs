@@ -10,38 +10,36 @@ namespace TreeDom.Html
     {
         private readonly IEnumerable<IDomPart> _head;
         private readonly IEnumerable<IDomPart> _body;
-        private readonly IDocument _origin;
 
-        public DocHtml5(IDocument origin)
-            : this(origin, Enumerable.Empty<IDomPart>())
+        public DocHtml5()
+            : this(Enumerable.Empty<IDomPart>(), Enumerable.Empty<IDomPart>())
         {
         }
 
-        public DocHtml5(IDocument origin, IDomPart head)
-            : this(origin, new[] { head })
+        public DocHtml5(IDomPart head, IDomPart body)
+            : this(new[] { head }, new[] { body })
         {
         }
 
-        public DocHtml5(IDocument origin, IEnumerable<IDomPart> head)
+        public DocHtml5(IEnumerable<IDomPart> head, IEnumerable<IDomPart> body)
         {
-            _origin = origin;
             _head = head;
-            _body = _origin.Parts();
+            _body = body;
         }
 
-        public IDocument WithPart(IDomPart part)
+        public IHtmlDocument WithPart(IDomPart part)
         {
-            return new Document(Parts().Add(part));
+            return AddToBody(part);
         }
 
         public IHtmlDocument AddToBody(IDomPart part)
         {
-            return new DocHtml5(_origin.WithPart(part), _head);
+            return new DocHtml5(_head, _body.Add(part));
         }
 
         public IHtmlDocument AddToHead(IDomPart part)
         {
-            return new DocHtml5(_origin, _head.Add(part));
+            return new DocHtml5(_head.Add(part), _body);
         }
 
         public string AsString()
@@ -65,7 +63,7 @@ namespace TreeDom.Html
                             new Tag("body"),
                             new PartsGroup(_body)
                         )
-                    )  
+                    )
                 )
             };
         }

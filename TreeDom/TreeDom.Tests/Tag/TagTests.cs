@@ -1,10 +1,4 @@
 ﻿using NUnit.Framework;
-using TreeDom.Tags;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TreeDom.Tags.Tests
 {
@@ -12,27 +6,28 @@ namespace TreeDom.Tags.Tests
     public class TagTests
     {
         [Test()]
-        public void AsStringTest()
+        public void Tag_AsString_Shoud_be_fine()
         {
-            var tag = new Tag(
-                new[] {
-                    new Raw("Test")
-                }    
-            );
+            var tag = new Tag("test");
 
             StringAssert.AreEqualIgnoringCase("<test>", tag.AsString());
         }
 
         [Test()]
-        public void PartsTest()
+        public void Tag_Parts_Shoud_be_fine()
         {
-            throw new NotImplementedException();
+            var name = new Raw("test");
+            var tag = new Tag(name);
+
+            CollectionAssert.AreEqual(new[] { name }, tag.Parts());
         }
 
         [Test()]
-        public void UnwrapTest()
+        public void Tag_Unwrap_Shoud_be_fine()
         {
-            throw new NotImplementedException();
+            var tag = new Tag("test");
+
+            Assert.AreEqual(tag, tag.Unwrap());
         }
     }
 }

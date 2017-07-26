@@ -13,6 +13,11 @@ namespace TreeDom.Tags
         {
         }
 
+        public Tag(IDomPart tagPart)
+            : this(new[] { tagPart })
+        {
+        }
+
         public Tag(IEnumerable<IDomPart> tagParts)
         {
             _tagParts = tagParts;

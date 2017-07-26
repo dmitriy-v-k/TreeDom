@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using TreeDom.Extensions;
 
 namespace TreeDom
 {
-    public sealed class Document : IDocument
+    public sealed class Document : IDocument<Document>
     {
         private readonly IEnumerable<IDomPart> _domParts;
         public Document(IDomPart domPart)
@@ -22,11 +23,9 @@ namespace TreeDom
             return string.Concat(Parts().Select(p => p.AsString()));
         }
 
-        public IDocument WithPart(IDomPart part)
+        public Document WithPart(IDomPart part)
         {
-            var parts = _domParts.ToList();
-            parts.Add(part);
-            return new Document(parts);
+            return new Document(Parts().Add(part));
         }
 
         public IEnumerable<IDomPart> Parts()

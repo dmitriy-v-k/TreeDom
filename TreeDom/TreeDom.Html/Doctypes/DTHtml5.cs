@@ -9,7 +9,8 @@ namespace TreeDom.Html.Doctypes
 {
     public sealed class DTHtml5 : TDoctype
     {
-        public DTHtml5() : base("html")
+        public DTHtml5()
+            : base("html")
         {
         }
 

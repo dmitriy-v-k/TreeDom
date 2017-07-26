@@ -1,10 +1,5 @@
 ﻿using NUnit.Framework;
-using TreeDom.Tags;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TreeDom.Tags.Tests
 {
@@ -12,7 +7,7 @@ namespace TreeDom.Tags.Tests
     public class TCloseTests
     {
         [Test()]
-        public void AsStringTest()
+        public void TClose_AsString_Should_be_fine()
         {
             var tag = new TClose(
                 new Tag(
@@ -26,15 +21,24 @@ namespace TreeDom.Tags.Tests
         }
 
         [Test()]
-        public void PartsTest()
+        public void TClose_Parts_Should_be_fine()
         {
-            throw new NotImplementedException();
+            var name = new Raw("test");
+            var tag = new Tag(name);
+            var close = new TClose(tag);
+
+            CollectionAssert.AreEqual((new[] { new Raw("/"), name }).Select(p => p.AsString()), close.Parts().Select(p => p.AsString()));
         }
 
         [Test()]
-        public void UnwrapTest()
+        public void TClose_Unwrap_Should_be_fine()
         {
-            throw new NotImplementedException();
+            var tag = new Tag(
+                new Raw("Test")
+            );
+            var close = new TClose(tag);
+
+            Assert.AreEqual(tag, close.Unwrap());
         }
     }
 }

@@ -20,12 +20,12 @@ namespace TreeDom.Html.Doctypes
         protected readonly string _lang;
         protected readonly string _url;
 
-        public TDoctype(string topLevel)
+        protected TDoctype(string topLevel)
             : this(topLevel, string.Empty, string.Empty, string.Empty, string.Empty, string.Empty, string.Empty, string.Empty)
         {
         }
 
-        public TDoctype(string topLevel, string pub, string reg, 
+        protected TDoctype(string topLevel, string pub, string reg,
             string org, string type, string name, string lang, string url)
         {
             _topLevel = topLevel;
