@@ -4,7 +4,7 @@ It's only a sketch but I beleave it should be in this way.
 
 A small example:
 
-```
+```C#
   return 
   new Document(
       new List<IDomPart> {
